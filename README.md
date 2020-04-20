@@ -1,3 +1,3 @@
-# young's github page
+# Young's Github Page
 
-## [enter](https://younggeun0.github.io)
+## [Renewal](https://younggeun0.github.io)
