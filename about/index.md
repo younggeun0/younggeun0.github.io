@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-date: 2020-04-20
+date: 2020-01-16
 comments: false
 ---
 
@@ -11,7 +11,7 @@ comments: false
 
 * 오영근
 * younggeun0@mme.dongguk.edu.com
-* [young's github](https://github.com/younggeun0)
+* <a href="https://github.com/younggeun0">young's github</a>
   - 미래융합정보기술 인턴
     + 2018.01-2018.06
   - 동국대학교 멀티미디어공학과 졸업
