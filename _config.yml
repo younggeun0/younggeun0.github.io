@@ -15,7 +15,6 @@
 # in the templates via {{ site.myvariable }}.
 title:              Youngs Github Page
 bio:                '一日不作一日不食'
-description:        "一日不作一日不食"
 url:                https://younggeun0.github.io
 github-url:         younggeun0
 github_username:    younggeun0
