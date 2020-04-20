@@ -1,24 +1,10 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title:              Youngs Github Page
-bio:                '一日不作一日不食'
-url:                https://younggeun0.github.io
-github-url:         younggeun0
-github_username:    younggeun0
-locale:             ko_KR
+title                     : Youngs Github Page
+bio                       : '一日不作一日不食'
+url                       : https://younggeun0.github.io
+github-url                : younggeun0
+github_username           : younggeun0
+locale                    : ko_KR
 
 # Build settings
 markdown:           kramdown
@@ -30,7 +16,10 @@ kramdown:
   enable_coderay:   false
 mathjax:            false
 highlighter:        rouge
-theme: jekyll-theme-minimal
+
+# remote theme settings
+remote_theme              : mmistakes/minimal-mistakes
+minimal_mistakes_skin     : dark
 plugins:
   - jekyll-feed
 
