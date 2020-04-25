@@ -25,9 +25,9 @@ layout: compress
                     {% for post in site.posts %} 
                         {% if post.project == null %}
                     <ul>
-                        <li class="wow fadeInLeft" data-wow-duration="1.5s">
+                        <li class="wow fadeInLeft" data-wow-duration="1.5s" style="border:1px solid #e9e9e9; border-radius: 5px;">
                             <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                            <p>{{ post.date | date_to_string }}</p>
+                            <span style="float:right; margin-top:6px;">{{ post.date | date_to_string }}</span>
                             <p>{{ post.excerpt }}</p>
                             <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
                         </li>
