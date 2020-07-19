@@ -8,10 +8,6 @@ feature: https://github.com/younggeun0/younggeun0.github.io/blob/master/_posts/i
 comments: true
 ---
  
-# iOS 브라우저에서 input type=button인 경우 click해도 focus가 생기지 않는 문제
-
----
-
 * iOS 브라우저에서 input type=button인 경우 click해도 focus가 생기지 않는다.
   * 브라우저별로 다르긴 하나 일반적으로 `<button>`을 클릭하면 button element로 focus가 이동을 한다.
   * 그러나 현재 iOS 브라우저(Safari, Chrome)에서는 focus가 가지지 않는다. (아래 mdn 참고)
