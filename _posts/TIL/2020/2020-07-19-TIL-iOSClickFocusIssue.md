@@ -28,6 +28,8 @@ $(function() {
 <input type="button" value="focus test2" ></input>
 ```
 
+![0719_01]()
+
 참고
 * [StackOverflow](https://stackoverflow.com/questions/42758815/safari-focus-event-doesnt-work-on-button-element)
 * [mdn - button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Clicking_and_focus)
