@@ -23,7 +23,7 @@ $(function() {
 </script>
 
 <!-- 클릭하면 포커스가 생김  -->
-<input type="button" value="click focus test!" id="get-focused"></input>
+<input type="button" value="focus test!" id="get-focused"></input>
 <!-- 클릭해도 포커스가 생기지 않음 -->
 <input type="button" value="focus test2" ></input>
 ```
