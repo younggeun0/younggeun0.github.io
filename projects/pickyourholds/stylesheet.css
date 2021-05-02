@@ -3,56 +3,31 @@
     src: url('https://younggeun0.github.io/projects/pickyourholds/resource/fonts/concertone-regular-webfont.woff2');
 }
 
-/* TODO 시스템 스타일 */
-/* Light mode */
-/* @media (prefers-color-scheme: light) {
-    body {
-        background-color: #ABB2BB;
-        color: #282C34;
-    }
-
-    .ph-border {
-        border:2px solid #282C34;
-    }
-
-    .ph-btns {
-        font-family: 'ConcertOne', Arial, sans-serif;
-        font-size:1em;
-        min-width:10px;
-        border-radius: 15px;
-        border:none; 
-        -webkit-appearance:none;
-        background-color: #ABB2BB;
-    }
-} */
-
-/* Dark mode */
-/* @media (prefers-color-scheme: dark) { */
-    body {
-        font-family: 'ConcertOne', Arial, sans-serif;
-        text-align: center; 
-        background-color: #282C34;
-        color: #ABB2BB;
-    }
-
-    .ph-border {
-        border:2px solid #ABB2BB;
-        border-radius: 5px;
-    }
-
-    .ph-btns {
-        font-family: 'ConcertOne', Arial, sans-serif;
-        font-size:1em;
-        min-width:10px;
-        border-radius: 15px;
-        border:none; 
-        -webkit-appearance:none;
-        background-color: #282C34;
-    }
-/* } */
-    
-/* body {
+body {
     font-family: 'ConcertOne', Arial, sans-serif;
     text-align: center; 
-} */
+    background-color: #282C34;
+    color: #ABB2BB;
+}
 
+#pyh-setter-canvas {
+    border:2px solid #ABB2BB;
+    border-radius: 5px;
+}
+
+#pyh-wrapping-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.pyh-btns {
+    font-family: 'ConcertOne', Arial, sans-serif;
+    font-size:1em;
+    min-width:10px;
+    border-radius: 15px;
+    border:none; 
+    -webkit-appearance:none;
+    background-color: #282C34;
+}

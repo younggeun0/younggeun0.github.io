@@ -12,55 +12,53 @@
 <script type="text/javascript" src="https://younggeun0.github.io/projects/pickyourholds/BRouteSetter.min.js" charset="utf-8"></script>
 <link rel="stylesheet" href="https://younggeun0.github.io/projects/pickyourholds/stylesheet.css" type="text/css" charset="utf-8" />
 </head>
-<body>
-<div style="display: flex; align-items: center; justify-content: center; height:80vh;">
-    <div id="ph-default-div" style="display:block;">
-        <div id="ph-deafult-header" style="margin: 0 15% 0 15%; align-self: center;">
-            <div style="height:30%; margin: 5% auto;">
-                <span style="font-size:4em; color:#409EEF;">PICK</span><br/>
-                <span style="font-size:3em;">
-                    <span style="color:#98C379;">YOUR</span> <span style="color:#C85358;">HOLDS</span><br/>
-                </span>
-                <span style="font-size:2em; color:#E5A656">(a.k.a 찍볼)</span>
-            </div>
-        </div>
-        <div id="ph-default-btns" style="margin-top:5%;">
-            <input class="ph-btns" id="btn-start-pick" 
+<body style="margin:0px;">
+<div id="pyh-wrapping-div">
+    <div id="pyh-default-div" style="display:block;">
+        <span style="font-size:4em; color:#409EEF;">PICK</span><br/>
+        <span style="font-size:3em;">
+            <span style="color:#98C379;">YOUR</span> <span style="color:#C85358;">HOLDS</span><br/>
+        </span>
+        <span style="font-size:2em; color:#E5A656">(a.k.a 찍볼)</span>
+        <div>
+            <input class="pyh-btns" id="btn-start-pick" 
                 type="button" value=" START 🧗‍♀️" onclick="InitBRouteSetter()" 
                 alt="Pick Your Holds Button"
                 style="font-size:2em; margin:25% 0 5% 0; color:#282C34; background-color: springgreen;">
-                <!-- color:white; background-color:#409EEF;"> -->
         </div>
-        <div style="margin-top:5%;">
+        <div>
             <a href="https://github.com/younggeun0" style="color:#C678DD; text-decoration:none;">created by younggeun0</a>
         </div>
     </div>
-    <div id="ph-setter-div" style="display:none;">
-        <canvas id="ph-setter-canvas" class="ph-border"></canvas>
-        <div id="ph-setter-btns" style=" margin: 1% 0% 1% 0%;">
-            <!-- TODO 공유기능 -->
-            <!-- <input class="ph-btns" id="btn-sharing" 
-                type="button" value="Sharing 🔗" onclick="SharingRoute()" 
-                style=" background-color:#E5C07B"> -->
-            <input class="ph-btns" id="btn-add-hands" 
+    <div id="pyh-setter-div" style="display:none;">
+        <canvas id="pyh-setter-canvas"></canvas>
+        <div style=" margin: 1% 0% 1% 0%;">
+            <input class="pyh-btns" id="btn-add-hands" 
                 type="button" value="✋" onclick="OnHansSelected()" >
-            <input class="ph-btns" id="btn-add-feet" 
+            <input class="pyh-btns" id="btn-add-feet" 
                 type="button" value="🦶" onclick="OnFeetSelected()" >
-            <input class="ph-btns" id="btn-add-feet" 
-                type="button" value="✨" onclick="Reset()" >
-            <input class="ph-btns" id="btn-repick" 
-                type="button" value="🧗‍♂️" onclick="SelectFile()" >
+            <input class="pyh-btns" type="button" value="✨" onclick="Reset()" >
+            <input class="pyh-btns" type="button" value="🧗‍♂️" onclick="SelectFile()" >
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
+    // mobile vertical align issue fixed
+    // ref: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    window.addEventListener('resize', () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+
     let pSetter = null;
     let bToggle = false;
 
     function InitBRouteSetter() {
         if (!pSetter) {
-            const pCanvas = document.getElementById('ph-setter-canvas');
+            const pCanvas = document.getElementById('pyh-setter-canvas');
             const pBtnHands = document.getElementById('btn-add-hands');
             const pBtnFeet = document.getElementById('btn-add-feet');
             
@@ -72,17 +70,12 @@
     }
 
     function SelectFile() {
-        const pDefautDiv = document.getElementById('ph-default-div');
-        const pSetterDiv = document.getElementById('ph-setter-div');
+        const pDefautDiv = document.getElementById('pyh-default-div');
+        const pSetterDiv = document.getElementById('pyh-setter-div');
 
         pSetter.SetDefaultBtnStatus();
         pSetter.SelectFile(pDefautDiv, pSetterDiv);
     }
-
-    // function SharingRoute() {
-    //     pSetter.SetDefaultBtnStatus();
-    //     pSetter.copyCanvasData();
-    // }
 
     function OnHansSelected() {
         pSetter.OnHandsSelected();
