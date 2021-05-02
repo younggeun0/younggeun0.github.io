@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>PICK YOUR HOLDS (a.k.a 찍볼)</title>
+<script src='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-3.6.0.min.js'></script>
+<link rel='stylesheet' href='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-ui.css' type='text/css' />
+<script src='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-ui.min.js'></script>
+<script type="text/javascript" src="https://younggeun0.github.io/projects/pickyourholds/BRouteSetter.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
+</head>
+<body>
+<div id="ph-default-div" style="display:block;">
+    <div id="ph-deafult-header" style="margin: 0 15% 0 15%;">
+        <div style="height:30%; margin: 5% auto;">
+            <span style="font-size:4em; color:#409EEF;">PICK</span><br/>
+            <span style="font-size:3em;">
+                <span style="color:#98C379;">YOUR</span> <span style="color:#C85358;">HOLDS</span><br/>
+            </span>
+            <span style="font-size:2.5em; color:#E5A656">(a.k.a 찍볼)</span>
+        </div>
+    </div>
+    <div id="ph-default-btns" style="margin-top:5%;">
+        <input class="ph-btns" id="btn-start-pick" 
+            type="button" value="🧗‍♀️" onclick="InitBRouteSetter()" 
+            alt="Pick Your Holds Button"
+            style="font-size:2em; color:#ABB2BB; background-color: springgreen;">
+            <!-- color:white; background-color:#409EEF;"> -->
+    </div>
+    <div style="margin-top:5%;">
+        <a href="https://github.com/younggeun0" style="color:#C678DD; text-decoration:none;">created by younggeun0</a>
+    </div>
+</div>
+<div id="ph-setter-div" style="display:none;">
+    <div>
+        <canvas id="ph-setter-canvas" class="ph-border"></canvas>
+    </div>
+    <div id="ph-setter-btns" style=" margin: 1% 0% 1% 0%;">
+        <!-- TODO 공유기능 -->
+        <!-- <input class="ph-btns" id="btn-sharing" 
+            type="button" value="Sharing 🔗" onclick="SharingRoute()" 
+            style=" background-color:#E5C07B"> -->
+        <input class="ph-btns" id="btn-add-hands" 
+            type="button" value="✋" onclick="OnHansSelected()" >
+        <input class="ph-btns" id="btn-add-feet" 
+            type="button" value="🦶" onclick="OnFeetSelected()" >
+        <input class="ph-btns" id="btn-add-feet" 
+            type="button" value="✨" onclick="Reset()" >
+        <input class="ph-btns" id="btn-repick" 
+            type="button" value="🧗‍♂️" onclick="SelectFile()" >
+    </div>
+</div>
+
+<script type="text/javascript">
+    let pSetter = null;
+    let bToggle = false;
+
+    function InitBRouteSetter() {
+        if (!pSetter) {
+            const pCanvas = document.getElementById('ph-setter-canvas');
+            const pBtnHands = document.getElementById('btn-add-hands');
+            const pBtnFeet = document.getElementById('btn-add-feet');
+            
+            pSetter = new BRouteSetter();
+            pSetter.ready(pCanvas, pBtnHands, pBtnFeet);
+            pSetter.addClickEventListener();
+        }
+        SelectFile();
+    }
+
+    function SelectFile() {
+        const pDefautDiv = document.getElementById('ph-default-div');
+        const pSetterDiv = document.getElementById('ph-setter-div');
+
+        pSetter.SetDefaultBtnStatus();
+        pSetter.SelectFile(pDefautDiv, pSetterDiv);
+    }
+
+    // function SharingRoute() {
+    //     pSetter.SetDefaultBtnStatus();
+    //     pSetter.copyCanvasData();
+    // }
+
+    function OnHansSelected() {
+        pSetter.OnHandsSelected();
+    }
+
+    function OnFeetSelected() {
+        pSetter.OnFeetSelected();
+    }
+
+    function Reset() {
+        pSetter.RestoreImage();
+    }
+</script>
+</body>
+</html>
