@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ConcertOne';
-    src: url('https://younggeun0.github.io/projects/pickyourholds/resource/fonts/concertone-regular-webfont.woff2');
+    src: url('http://218.145.99.140:33933/YourBoulderProblem/resource/fonts/concertone-regular-webfont.woff2');
 }
 
 body {
-    font-family: 'ConcertOne', Arial, sans-serif;
+    font-family: 'ConcertOne', sans-serif;
     text-align: center; 
     background-color: #282C34;
     color: #ABB2BB;
@@ -24,9 +24,7 @@ body {
 
 .pyh-btns {
     font-family: 'ConcertOne', Arial, sans-serif;
-    font-size:1em;
-    min-width:10px;
-    border-radius: 15px;
+    border-radius: 10px;
     border:none; 
     -webkit-appearance:none;
     background-color: #282C34;
