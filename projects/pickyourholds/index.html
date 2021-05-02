@@ -10,7 +10,7 @@
 <link rel='stylesheet' href='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-ui.css' type='text/css' />
 <script src='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-ui.min.js'></script>
 <script type="text/javascript" src="https://younggeun0.github.io/projects/pickyourholds/BRouteSetter.min.js" charset="utf-8"></script>
-<link rel="stylesheet" href="https://younggeun0.github.io/projects/pickyourholds/stylesheet.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="pickYourHolds.css" type="text/css" charset="utf-8" />
 </head>
 <body>
 <div id="ph-default-div" style="display:block;">
@@ -25,9 +25,9 @@
     </div>
     <div id="ph-default-btns" style="margin-top:5%;">
         <input class="ph-btns" id="btn-start-pick" 
-            type="button" value="🧗‍♀️" onclick="InitBRouteSetter()" 
+            type="button" value=" START 🧗‍♀️" onclick="InitBRouteSetter()" 
             alt="Pick Your Holds Button"
-            style="font-size:2em; color:#ABB2BB; background-color: springgreen;">
+            style="font-size:2em; color:#282C34; background-color: springgreen;">
             <!-- color:white; background-color:#409EEF;"> -->
     </div>
     <div style="margin-top:5%;">
@@ -65,7 +65,7 @@
             const pBtnFeet = document.getElementById('btn-add-feet');
             
             pSetter = new BRouteSetter();
-            pSetter.ready(pCanvas, pBtnHands, pBtnFeet);
+            pSetter.ready(pCanvas, pBtnHands, pBtnFeet, 'https://younggeun0.github.io/projects/pickyourholds/resource/img');
             pSetter.addClickEventListener();
         }
         SelectFile();
