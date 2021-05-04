@@ -29,3 +29,7 @@ body {
     -webkit-appearance:none;
     background-color: #282C34;
 }
+
+a {
+    text-decoration:none;
+}

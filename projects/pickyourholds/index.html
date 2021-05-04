@@ -27,18 +27,19 @@
                 style="font-size:2em; margin:25% 0 5% 0; color:#282C34; background-color: springgreen;">
         </div>
         <div>
-            <a href="https://github.com/younggeun0" style="color:#C678DD; text-decoration:none;">created by younggeun0</a>
+            <a href="https://github.com/younggeun0" style="color:#C678DD;">created by younggeun0</a>
         </div>
     </div>
     <div id="pyh-setter-div" style="display:none;">
         <canvas id="pyh-setter-canvas"></canvas>
         <div style=" margin: 1% 0% 1% 0%;">
             <input class="pyh-btns" id="btn-add-hands" 
-                type="button" value="✋" onclick="OnHansSelected()" >
+                type="button" value="✋"/>
             <input class="pyh-btns" id="btn-add-feet" 
-                type="button" value="🦶" onclick="OnFeetSelected()" >
-            <input class="pyh-btns" type="button" value="✨" onclick="Reset()" >
-            <input class="pyh-btns" type="button" value="🧗‍♂️" onclick="SelectFile()" >
+                type="button" value="🦶" onclick="OnFeetSelected()"/ >
+            <input class="pyh-btns" type="button" value="✨" onclick="Reset()" />
+            <input class="pyh-btns" type="button" value="🧗‍♂️" onclick="SelectFile()" />
+            <a class="pyh-btns" id="pyh-download" download="image.png" onclick="DownloadImage()">💾</a>
         </div>
     </div>
 </div>
@@ -66,7 +67,7 @@
             pSetter.ready(pCanvas, pBtnHands, pBtnFeet, 
                 'https://younggeun0.github.io/projects/pickyourholds/resource/img',
                 '.pyh-btns');
-            pSetter.addClickEventListener();
+            pSetter.addEventListener();
         }
         SelectFile();
     }
@@ -89,6 +90,11 @@
 
     function Reset() {
         pSetter.RestoreImage();
+    }
+
+    function DownloadImage() {
+        const pLinkNode = document.getElementById('pyh-download');
+        pSetter.DownloadImage(pLinkNode);
     }
 </script>
 </body>
