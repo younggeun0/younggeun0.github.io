@@ -22,9 +22,9 @@
         <span style="font-size:2em; color:#E5A656">(a.k.a 찍볼)</span>
         <div>
             <input class="pyh-btns" id="btn-start-pick" 
-                type="button" value=" START 🧗‍♀️" onclick="InitBRouteSetter()" 
+                type="button" value=" START 🧗‍♂️🧗‍♀️" onclick="InitBRouteSetter()" 
                 alt="Pick Your Holds Button"
-                style="font-size:2em; margin:25% 0 5% 0; color:#C678DD; background-color: springgreen;">
+                style="font-size:2em; margin:25% 0 5% 0; color:#C678DD; border:5px #ABB2BB solid;">
         </div>
         <div>
             <a href="https://github.com/younggeun0" style="color:#C678DD;">created by younggeun0</a>
@@ -33,10 +33,9 @@
     <div id="pyh-setter-div" style="display:none;">
         <canvas id="pyh-setter-canvas"></canvas>
         <div style=" margin: 1% 0% 1% 0%; line-height: normal;">
-            <input class="pyh-btns" id="btn-add-hands" type="button" value="🧗‍♂️🧗‍♀️"/>
-            <input class="pyh-btns" type="button" value="✨" onclick="Reset()" />
-            <input class="pyh-btns" id="recapture" type="button" value="📷" onclick="SelectFile()" />
-            <a class="pyh-btns" id="pyh-download" style="padding: 1px 6px" download="image.png" onclick="DownloadImage()">💾</a>
+            <input class="pyh-btns" id="pyh-reset" type="button" value="🧹" onclick="Reset()" />
+            <input class="pyh-btns" type="button" value="📷" onclick="SelectFile()" />
+            <a class="pyh-btns" id="pyh-download" download="image.png" onclick="DownloadImage()">💾</a>
         </div>
     </div>
 </div>
@@ -52,9 +51,6 @@
     });
 
     let pSetter = null;
-    let bToggle = false;
-    // TODO 1. 마커 크기조절 기능
-    // TODO 2. 마커 색상조절 기능
     function InitBRouteSetter() {
         if (!pSetter) {
             const pCanvas = document.getElementById('pyh-setter-canvas');
@@ -62,7 +58,7 @@
             const pBtnFeet = document.getElementById('btn-add-feet');
             
             pSetter = new BRouteSetter();
-            pSetter.ready(pCanvas, pBtnHands, '.pyh-btns');
+            pSetter.Ready(pCanvas, pBtnHands, '.pyh-btns');
             pSetter.AddEvents();
         }
         SelectFile();
