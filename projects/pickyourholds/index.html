@@ -31,8 +31,12 @@
         </div>
     </div>
     <div id="pyh-setter-div" style="display:none;">
-        <canvas id="pyh-setter-canvas"></canvas>
+        <div id="pyh-wrapping-canvas-div" style="position:relative;">
+            <canvas id="pyh-origin-canvas"></canvas>
+            <canvas id="pyh-marker-canvas"></canvas>
+        </div>
         <div style=" margin: 1% 0% 1% 0%; line-height: normal;">
+            <input class="pyh-btns" id="pyh-undo" type="button" value="😅" onclick="Undo()" />
             <input class="pyh-btns" id="pyh-reset" type="button" value="✨" onclick="Reset()" />
             <input class="pyh-btns" type="button" value="📷" onclick="SelectFile()" />
             <a class="pyh-btns" id="pyh-download" download="image.png" onclick="DownloadImage()">💾</a>
@@ -53,12 +57,13 @@
     let pSetter = null;
     function InitBRouteSetter() {
         if (!pSetter) {
-            const pCanvas = document.getElementById('pyh-setter-canvas');
+            const pOriginCanvas = document.getElementById('pyh-origin-canvas');
+            const pMarkerCanvas = document.getElementById('pyh-marker-canvas');
             const pBtnHands = document.getElementById('btn-add-hands');
             const pBtnFeet = document.getElementById('btn-add-feet');
             
             pSetter = new BRouteSetter();
-            pSetter.Ready(pCanvas, pBtnHands, '.pyh-btns');
+            pSetter.Ready(pOriginCanvas, pMarkerCanvas, pBtnHands, '.pyh-btns');
             pSetter.AddEvents();
         }
         SelectFile();
@@ -67,6 +72,9 @@
         const pDefautDiv = document.getElementById('pyh-default-div');
         const pSetterDiv = document.getElementById('pyh-setter-div');
         pSetter.SelectFile(pDefautDiv, pSetterDiv);
+    }
+    function Undo() {
+        pSetter.Undo();
     }
     function Reset() {
         pSetter.RestoreImage();

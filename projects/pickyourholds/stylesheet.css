@@ -14,7 +14,12 @@ a {
     text-decoration:none;
 }
 
-#pyh-setter-canvas {
+canvas {
+    position: absolute;
+    left: 0px;
+}
+
+#pyh-wrapping-canvas-div {
     border:2px solid #ABB2BB;
     /* touch-action: manipulation; */
     border-radius: 5px;
@@ -34,5 +39,6 @@ a {
     -webkit-appearance:none;
     background-color: #282C34;
     padding: 1px 6px;
-    margin: 0px 20px;
+    margin: 0px 10px;
+    touch-action: manipulation; /* prevent auto zoom */
 }
