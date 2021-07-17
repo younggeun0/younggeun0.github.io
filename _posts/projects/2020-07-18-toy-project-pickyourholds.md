@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pick Your Holds(a.k.a 찍볼)
+title: Pick Your Holds(a.k.a 찍볼) 🧗‍♂️🧗‍♀️
 tags: [ToyProject]
 excerpt: "HTML5 웹 애플리케이션"
 project: true
@@ -8,7 +8,7 @@ date: 2020-07-18
 comments: true
 ---
 
-# 🧗‍♂️🧗‍♀️ Pick Your Holds(a.k.a 찍볼)
+# Pick Your Holds(a.k.a 찍볼) 🧗‍♂️🧗‍♀️
 
 **찍볼 == 찍어서 볼더링**
 * [실내 볼더링 클라이밍 센터에서 기존 문제가 아닌 새 문제를 만들 수 있는 웹앱](https://younggeun0.github.io/projects/pickyourholds/index.html)
@@ -23,6 +23,6 @@ comments: true
 
 ## 앱 이미지
 
-[pyh01](https://github.com/younggeun0/younggeun0.github.io/raw/master/_posts/img/toyProjects/pyh/pyh01.png?raw=true)
+<span style="display:block; text-align:center">![pyh01](https://github.com/younggeun0/younggeun0.github.io/raw/master/_posts/img/toyProjects/pyh/pyh01.png?raw=true)</span>
 
-[pyh01](https://github.com/younggeun0/younggeun0.github.io/raw/master/_posts/img/toyProjects/pyh/pyh02.png?raw=true)
+<span style="display:block; text-align:center">![pyh01](https://github.com/younggeun0/younggeun0.github.io/raw/master/_posts/img/toyProjects/pyh/pyh02.png?raw=true)</span>
