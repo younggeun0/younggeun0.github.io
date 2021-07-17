@@ -9,37 +9,41 @@
 <script src='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-3.6.0.min.js'></script>
 <link rel='stylesheet' href='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-ui.css' type='text/css' />
 <script src='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-ui.min.js'></script>
-<script type="text/javascript" src="https://younggeun0.github.io/projects/pickyourholds/BRouteSetter.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://younggeun0.github.io/projects/pickyourholds/RouteSetter.min.js" charset="utf-8"></script>
 <link rel="stylesheet" href="https://younggeun0.github.io/projects/pickyourholds/stylesheet.css" type="text/css" charset="utf-8" />
 </head>
-<body style="margin:0px;">
+<body>
 <div id="pyh-wrapping-div">
     <div id="pyh-default-div" style="display:block;">
-        <span style="font-size:4em; color:#409EEF;">PICK</span><br/>
-        <span style="font-size:3em;">
-            <span style="color:#98C379;">YOUR</span> <span style="color:#C85358;">HOLDS</span><br/>
-        </span>
-        <span style="font-size:2em; color:#E5A656">(a.k.a 찍볼)</span>
         <div>
-            <input class="pyh-btns" id="btn-start-pick" 
-                type="button" value=" START 🧗‍♂️🧗‍♀️" onclick="InitBRouteSetter()" 
-                alt="Pick Your Holds Button"
-                style="font-size:2em; margin:25% 0 5% 0; color:#C678DD; border:5px #ABB2BB solid;">
+            <h1>PICK</h1>
+            <h2><span style="color:#98C379;">YOUR</span> <span style="color:#C85358;">HOLDS</span><br/></h2>
+            <h3>(a.k.a 찍볼)</h3>
+        </div>
+        <div style="margin:8% 0 0;">
+            <img src="resource/img/climber1.png" alt="climber1" style="width:20%;">
+            <img src="resource/img/climber2.png" alt="climber2" style="width:20%;">
         </div>
         <div>
-            <a href="https://github.com/younggeun0" style="color:#C678DD;">created by younggeun0</a>
+            <input id="btn-start" 
+                type="button" value=" START " onclick="InitRouteSetter()" 
+                alt="Pick Your Holds Button">
+        </div>
+        <div>
+            <a href="https://github.com/younggeun0" id="copyright">created by younggeun0</a>
         </div>
     </div>
     <div id="pyh-setter-div" style="display:none;">
-        <div id="pyh-wrapping-canvas-div" style="position:relative;">
+        <div id="pyh-wrapping-canvas-div">
             <canvas id="pyh-origin-canvas"></canvas>
             <canvas id="pyh-marker-canvas"></canvas>
         </div>
-        <div style=" margin: 1% 0% 1% 0%; line-height: normal;">
-            <input class="pyh-btns" id="pyh-undo" type="button" value="😅" onclick="Undo()" />
-            <input class="pyh-btns" id="pyh-reset" type="button" value="✨" onclick="Reset()" />
-            <input class="pyh-btns" type="button" value="📷" onclick="SelectFile()" />
-            <a class="pyh-btns" id="pyh-download" download="image.png" onclick="DownloadImage()">💾</a>
+        <div id="pyh-bottom-menu">
+            <img src="resource/img/grin.png" alt="undo button" class="pyh-btns" id="pyh-undo" onclick="Undo()">
+            <img src="resource/img/sparkle.png" alt="undo button" class="pyh-btns" id="pyh-reset" onclick="Reset()">
+            <img src="resource/img/camera.png" alt="undo button" class="pyh-btns" onclick="SelectFile()">
+            <img src="resource/img/disk.png" alt="undo button" class="pyh-btns" onclick="DownloadImage()">
+            <a id="pyh-download" style="display:none;" download="image.png">
         </div>
     </div>
 </div>
@@ -55,15 +59,15 @@
     });
 
     let pSetter = null;
-    function InitBRouteSetter() {
+    function InitRouteSetter() {
         if (!pSetter) {
             const pOriginCanvas = document.getElementById('pyh-origin-canvas');
             const pMarkerCanvas = document.getElementById('pyh-marker-canvas');
             const pBtnHands = document.getElementById('btn-add-hands');
             const pBtnFeet = document.getElementById('btn-add-feet');
             
-            pSetter = new BRouteSetter();
-            pSetter.Ready(pOriginCanvas, pMarkerCanvas, pBtnHands, '.pyh-btns');
+            pSetter = new RouteSetter();
+            pSetter.Ready(pOriginCanvas, pMarkerCanvas, pBtnHands);
             pSetter.AddEvents();
         }
         SelectFile();
