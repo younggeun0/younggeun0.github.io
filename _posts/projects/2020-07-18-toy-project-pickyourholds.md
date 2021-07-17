@@ -11,7 +11,7 @@ comments: true
 # Pick Your Holds(a.k.a 찍볼) 🧗‍♂️🧗‍♀️
 
 **찍볼 == 찍어서 볼더링**
-* [실내 볼더링 클라이밍 센터에서 기존 문제가 아닌 새 문제를 만들 수 있는 웹앱(Click Here)](https://younggeun0.github.io/projects/pickyourholds/index.html)
+* [실내 볼더링 클라이밍 센터에서 기존 문제가 아닌 새 문제를 만들 수 있는 웹앱 (Click Here)](https://younggeun0.github.io/projects/pickyourholds/index.html)
 
 ## 사용법
 
