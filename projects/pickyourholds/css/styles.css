@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'ConcertOne', 'Jua', sans-serif;
+    src: url('https://younggeun0.github.io/projects/pickyourholds/fonts/concertone-regular-webfont.woff2');
+
+}
+/* @import url('https://fonts.googleapis.com/css?family=Jua:400'); */
+
+body {
+    font-family: 'ConcertOne', 'Jua' sans-serif;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'ConcertOne', 'Jua', sans-serif;
+}
+
+/* Heading */
+.big-heading {
+    font-family: 'ConcertOne', 'Jua' sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+
+.section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.price-text {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.testmonial-text {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+
+/* Title Section */ 
+#title .container-fluid {
+    text-align: left;
+    color: #fff;
+    padding: 3% 15%;
+}
+
+
+@media (max-width: 1028px) {
+    #title {
+        text-align: center;
+    }
+
+    .title-image {
+        position: static;
+        transform: rotate(0);
+    }
+
+}
+
+.feature-title {
+    font-size: 1.5rem;
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
+
+
+/* Navigation Bar */
+.navbar {
+    padding-bottom: 4.5rem;
+}
+
+.navbar-brand {
+    font-family: "ConcertOne", 'Jua', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: 'ConcertOne-Light', 'Jua' sans-serif;
+    font-weight: "";
+}
+
+.container-fluid {
+    padding: 7% 15%;
+}
+
+/* Sections */
+.colored-section {
+    background-color: #282C34;;
+    color: #fff;
+}
+
+.white-section {
+    background-color: #fff;
+}
+
+/* Buttons */
+.download-button {
+    margin: 5% 3% 5% 0
+}
+
+/* Title Image */
+.title-image {
+    /* width: 60%; */
+    transform: rotate(25deg);
+    position: absolute;
+    /* right: 30%; */
+}
+
+
+#features {
+    padding: 7% 5%;
+    position:relative;
+}
+
+.feature {
+    padding: 5%;
+}
+
+.feature p {
+    font-size: 0.8rem;
+    color: #757575
+}
+
+.feature-icon {
+    margin: 3% 0;
+    color: #C678DD;
+}
+
+.feature-icon:hover {
+    color: #282C34;
+}
+
+
+/* Testimonials */
+#testimonials {
+    background-color: #C678DD;
+}
+
+.testimonial-image {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+
+#press {
+    background-color: #C678DD;
+    padding-bottom: 3%;
+}
+
+
+.press-logo {
+    width: 15%;
+    margin: 20px 20px 50px;
+}
+
+
+#pricing {
+    padding: 100px;
+}
+
+.price-column {
+    padding:3% 2%;
+}
+
+/* cta Section */
+
+#cta {
+    padding: 7% 5%;
+}
+
+
+.cta-row {
+    justify-content: center;
+}
+
+.cta-btn {
+    max-width: 170px;
+}
+
+.cta-heading {
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+
+
+#footer {
+    padding: 15% 5% 3% 5%;
+}
+
+.start-btn {
+    font-size: 2rem;
+    font-family: "ConcertOne", 'Jua', sans-serif;
+    background-color: #C678DD;
+    color: #282C34;
+}

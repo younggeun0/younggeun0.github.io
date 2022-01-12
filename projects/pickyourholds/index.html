@@ -6,11 +6,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>PICK YOUR HOLDS (a.k.a 찍볼)</title>
-<script src='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-3.6.0.min.js'></script>
-<link rel='stylesheet' href='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-ui.css' type='text/css' />
-<script src='https://younggeun0.github.io/projects/pickyourholds/jquery/jquery-ui.min.js'></script>
-<script type="text/javascript" src="https://younggeun0.github.io/projects/pickyourholds/RouteSetter.min.js" charset="utf-8"></script>
-<link rel="stylesheet" href="https://younggeun0.github.io/projects/pickyourholds/stylesheet.css" type="text/css" charset="utf-8" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/RouteSetter.js" charset="utf-8"></script>
+<link rel="stylesheet" href="css/pickyourhold.css" type="text/css" charset="utf-8" />
 </head>
 <body>
 <div id="pyh-wrapping-div">
@@ -21,8 +19,8 @@
             <h3>(a.k.a 찍볼)</h3>
         </div>
         <div style="margin:8% 0 0;">
-            <img src="resource/img/climber1.png" alt="climber1" style="width:20%;">
-            <img src="resource/img/climber2.png" alt="climber2" style="width:20%;">
+            <img src="img/climber1.png" alt="climber1" style="width:20%;">
+            <img src="img/climber2.png" alt="climber2" style="width:20%;">
         </div>
         <div>
             <input id="btn-start" 
@@ -39,10 +37,10 @@
             <canvas id="pyh-marker-canvas"></canvas>
         </div>
         <div id="pyh-bottom-menu">
-            <img src="resource/img/grin.png" alt="undo button" class="pyh-btns" id="pyh-undo" onclick="Undo()">
-            <img src="resource/img/sparkle.png" alt="undo button" class="pyh-btns" id="pyh-reset" onclick="Reset()">
-            <img src="resource/img/camera.png" alt="undo button" class="pyh-btns" onclick="SelectFile()">
-            <img src="resource/img/disk.png" alt="undo button" class="pyh-btns" onclick="DownloadImage()">
+            <img src="img/grin.png" alt="undo button" class="pyh-btns" id="pyh-undo" onclick="Undo()">
+            <img src="img/sparkle.png" alt="undo button" class="pyh-btns" id="pyh-reset" onclick="Reset()">
+            <img src="img/camera.png" alt="undo button" class="pyh-btns" onclick="SelectFile()">
+            <img src="img/disk.png" alt="undo button" class="pyh-btns" onclick="DownloadImage()">
             <a id="pyh-download" style="display:none;" download="image.png">
         </div>
     </div>
