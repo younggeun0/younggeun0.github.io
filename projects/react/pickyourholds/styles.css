@@ -1,0 +1,52 @@
+body {
+    background-color: #282C34;
+    font-family: 'Concert One';
+    text-align: center;
+}
+
+canvas {
+    border-radius: 10px;
+    border: 2px solid #ABB2BB;
+}
+
+.signiture {
+    text-decoration: none;
+    color: #efefef;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.heading {
+    font-size: 3rem;
+}
+.sub-heading {
+    font-size: 2.5rem;
+}
+
+.climber {
+    width: 8rem;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.btn-start {
+    font-family: 'Concert One', Arial, sans-serif;
+    font-size: 2.5rem;
+    padding:0 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #C678DD;
+    margin: 5% 0 5% 0;
+    color: #282C34;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.btn-start:hover {
+    color:#efefef;
+}
+
+.btn-imoji {
+    width: 25%;
+    margin-top: 5%;
+}
