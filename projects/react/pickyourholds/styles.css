@@ -10,6 +10,7 @@ canvas {
 }
 
 .signiture {
+    font-size: 1.5rem;
     text-decoration: none;
     color: #efefef;
     padding: 0 5px;
@@ -19,24 +20,19 @@ canvas {
 .heading {
     font-size: 3rem;
 }
-.sub-heading {
-    font-size: 2.5rem;
-}
 
 .climber {
     width: 8rem;
     border-radius: 10px;
-    margin: 15px 0;
 }
 
 .btn-start {
     font-family: 'Concert One', Arial, sans-serif;
-    font-size: 2.5rem;
-    padding:0 20px;
+    font-size: 4rem;
+    padding:0 3rem;
     border: none;
     border-radius: 10px;
     background-color: #C678DD;
-    margin: 5% 0 5% 0;
     color: #282C34;
     cursor: pointer;
     -webkit-appearance: none;
@@ -47,6 +43,5 @@ canvas {
 }
 
 .btn-imoji {
-    width: 25%;
-    margin-top: 5%;
+    width: 3rem;
 }
