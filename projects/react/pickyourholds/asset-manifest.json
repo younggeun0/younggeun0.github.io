@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/projects/react/pickyourholds/static/js/main.f3a8826c.js",
+    "main.js": "/projects/react/pickyourholds/static/js/main.9756da3c.js",
     "index.html": "/projects/react/pickyourholds/index.html",
-    "main.f3a8826c.js.map": "/projects/react/pickyourholds/static/js/main.f3a8826c.js.map"
+    "main.9756da3c.js.map": "/projects/react/pickyourholds/static/js/main.9756da3c.js.map"
   },
   "entrypoints": [
-    "static/js/main.f3a8826c.js"
+    "static/js/main.9756da3c.js"
   ]
 }
