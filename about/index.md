@@ -13,18 +13,18 @@ comments: false
 
 email 📨 : dureng5@gmail.com
 
-### 경력 (Click)
+### 경력
 
 ---
 
-<details>
+<details style="cursor: pointer;">
   <summary> 에버온 🔥 (2022.03~ )</summary>
   <ul>
     <li>React, NodeJS 기반 차세대 프로젝트 진행중</li>
   </ul>
 </details>
 
-<details>
+<details style="cursor: pointer;">
   <summary> 포시에스 연구소 (2019.06~2022.02)</summary>
   <ul>
     <li>
@@ -50,7 +50,7 @@ email 📨 : dureng5@gmail.com
   </ul>
 </details>
 
-<details>
+<details style="cursor: pointer;">
   <summary> 미래융합정보기술 인턴 (2018.01-2018.06)</summary>
   <ul>
     <li>사내 솔루션 QA업무 보조</li>
@@ -61,14 +61,14 @@ email 📨 : dureng5@gmail.com
 
 ---
 
-<details>
+<details style="cursor: pointer;">
   <summary> 쌍용교육센터 Python & Java 응용SW실무개발자 양성 과정 (2018.10-2019.05)</summary>
   <ul>
     <li>Java 백앤드 개발자 양성과정 수료</li>
   </ul>
 </details>
 
-<details>
+<details style="cursor: pointer;">
   <summary> 동국대학교 멀티미디어공학과 졸업 (2010.03-2018.08)</summary>
   <ul>
     <li>이 땐 제가 개발자가 될 줄 몰랐습니다 😇</li>
