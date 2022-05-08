@@ -13,7 +13,9 @@ comments: false
 
 email 📨 : dureng5@gmail.com
 
-### 경력
+### 경력 (Click)
+
+---
 
 <details>
   <summary> 에버온 🔥 (2022.03~ )</summary>
@@ -56,6 +58,8 @@ email 📨 : dureng5@gmail.com
 </details>
 
 ### 교육
+
+---
 
 <details>
   <summary> 쌍용교육센터 Python & Java 응용SW실무개발자 양성 과정 (2018.10-2019.05)</summary>
