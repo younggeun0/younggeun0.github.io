@@ -11,7 +11,10 @@ comments: true
 # Pick Your Holds(a.k.a 찍볼) 🧗‍♂️🧗‍♀️
 
 **찍볼 == 찍어서 볼더링**
-* [볼더링 문제를 만드는 웹앱 (Click Here)](https://younggeun0.github.io/projects/pickyourholds/index.html)
+
+-   [볼더링 문제를 만드는 웹앱 (Click Here)](https://younggeun0.github.io/projects/pickyourholds/index.html)
+-   [Github Repository(Vanila JS)](https://github.com/younggeun0/PickYourHolds)
+-   [Github Repository(React)](https://github.com/younggeun0/PickYourHolds_React)
 
 ## 사용법
 
