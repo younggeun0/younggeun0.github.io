@@ -14,6 +14,20 @@ comments: true
 
 ## Part 1: Getting Started
 
+**컨테이너란?**
+
+-   **호스트 기기의 다른 프로세스들과는 분리된 sandboxed 프로세스**로 이미지의 실행가능한 인스턴스
+    -   DockerAPI 또는 CLI를 사용해서 컨테이너를 create, start, stop, move, delete할 수 있음
+    -   로컬 머신, 가상 머신, 배포된 클라우드 어디서든 실행가능
+    -   OS 상관없이 실행 가능(portable)
+    -   컨테이너들은 각각 분리돼 컨테이너 스스로의 소프트웨어, 바이너리, 설정 등을 갖고 실행됨
+
+**컨테이너 이미지란?**
+
+-   컨테이너를 실행하면 분리된 파일시스템을 사용하는데 이 **커스텀 파일시스템을 제공하는게 컨테이너 이미지.**
+    -   이미지는 컨테이너의 파일 시스템을 제공하기 때문에 이미지는 앱을 실행하기 위한 모든 정보를 담고 있어야 함(모든 dependency들과 설정(configuration), 스크립트, 바이너리 등)
+    -   또한 이미지는 환경변수, 기본 실행 커맨드, 다른 메타데이터 등 컨테이너를 위한 다른 설정 정보도 포함함
+
 1. Docker 다운로드, 인스톨
 2. 튜토리얼 시작, 아래 커맨드 실행
 
@@ -29,19 +43,10 @@ docker run -d -p 80:80 docker/getting-started
 
 ![docker01](https://github.com/younggeun0/younggeun0.github.io/blob/master/_posts/img/docker/01.png?raw=true)
 
-**컨테이너란?**
-
--   **호스트 기기의 다른 프로세스들과는 분리된 sandboxed 프로세스**로 이미지의 실행가능한 인스턴스
-    -   DockerAPI 또는 CLI를 사용해서 컨테이너를 create, start, stop, move, delete할 수 있음
-    -   로컬 머신, 가상 머신, 배포된 클라우드 어디서든 실행가능
-    -   OS 상관없이 실행 가능(portable)
-    -   컨테이너들은 각각 분리돼 컨테이너 스스로의 소프트웨어, 바이너리, 설정 등을 갖고 실행됨
-
-**컨테이너 이미지란?**
-
--   컨테이너를 실행하면 분리된 파일시스템을 사용하는데 이 **커스텀 파일시스템을 제공하는게 컨테이너 이미지.**
-    -   이미지는 컨테이너의 파일 시스템을 제공하기 때문에 이미지는 앱을 실행하기 위한 모든 정보를 담고 있어야 함(모든 dependency들과 설정(configuration), 스크립트, 바이너리 등)
-    -   또한 이미지는 환경변수, 기본 실행 커맨드, 다른 메타데이터 등 컨테이너를 위한 다른 설정 정보도 포함함
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## Part 2: Sample Application
 
@@ -50,7 +55,7 @@ docker run -d -p 80:80 docker/getting-started
 2-1. 앱의 컨테이너 이미지 빌드
 
 -   앱을 빌드하기 위해선 `Dockerfile`이 필요
-    -   Dockerfile은 컨테이너를 생성하기 위한 텍스트기반 설명 스크립트
+    -   `Dockerfile`은 컨테이너를 생성하기 위한 텍스트기반 설명 스크립트
     -   package.json과 동일한 위치에 `Dockerfile` 생성(확장자 없음)
 
 ```docker
@@ -87,6 +92,11 @@ docker run -dp 3000:3000 getting-started
 
 ![docker02](https://github.com/younggeun0/younggeun0.github.io/blob/master/_posts/img/docker/02.png?raw=true)
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Part3: Update the application
 
 위 앱에서 경고 메시지를 바꿔 적용시키고자 하는 경우…
@@ -112,12 +122,18 @@ docker run -dp 3000:3000 getting-started
 docker: Error response from daemon: driver failed programming external connectivity on endpoint trusting_swartz (11c5faf9edcdb4c48f3513f08e05a4270b432cb5c97c0d440a04815a40af25c3): Bind for 0.0.0.0:3000 failed: port is already allocated.
 ```
 
+<br/>
+<br/>
+
 **Old Container 제거**
 
 -   제거하기 위해선 컨테이너를 우선 정지시켜야 함
     -   정지 시키는 방법
         1. CLI를 이용하는 방법
         2. Docker Dashboard를 사용하는 방법
+
+<br/>
+<br/>
 
 **CLI를 이용한 컨테이너 제거**
 
@@ -145,13 +161,21 @@ docker rm <the-container-id>
 docker rm -f <the-container-id>
 ```
 
+<br/>
+<br/>
+
 **Docker Dashboard를 이용한 컨테이너 제거**
 
 -   Dashboard 컨테이너 우측 휴지통 버튼을 선택해서 컨테이너 제거
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Part4: Share the application
 
--   만들어진 Docker 이미지는 Docker Hub와 같은 Docker registry를 사용해서 이미지 공유가 가능
+-   만들어진 Docker 이미지는 [Docker Hub](https://hub.docker.com/)와 같은 Docker registry를 사용해서 이미지 공유가 가능
 
 1. Docker Hub에 배포 시 로그인 후 레포지토리 생성(이름 getting-started, visiblity: public)
 2. (이미지) 태그를 레포지토리에 push하는 커맨드가 표시됨
@@ -159,6 +183,9 @@ docker rm -f <the-container-id>
 ```bash
 docker push <docker-hub-id>/getting-started:tagname
 ```
+
+<br/>
+<br/>
 
 **이미지 Push 하기**
 
@@ -186,9 +213,13 @@ docker tag getting-started <docker-hub-id>/getting-started
 docker push <docker-hub-id>/getting-started
 ```
 
+<br/>
+<br/>
+
 ### 새 인스턴스로 이미지 실행
 
 1\. [https://labs.play-with-docker.com/](https://labs.play-with-docker.com/) 페이지에서 Docker 로그인, `ADD NEW INSTANCE` 클릭
+
 2\. Docker Hub에 올렸던 getting-started 이미지 실행
 
 ```bash
@@ -199,12 +230,17 @@ docker run -dp 3000:3000 <docker-hub-id>/getting-started
 
 **이렇게 이미지를 만들고 Registry에 푸시해서 production 환경이 최신 이미지를 사용하는게 일반적인 CI Pipeline**
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Part5: Persist the DB
 
-**각 컨테이너의 파일시스템(Scartch space, 임시 유저 데이터 저장공간)은 분리돼 있어 동일 이미지 다른 컨테이너엔 영향이 없음**
+**각 컨테이너의 파일시스템(Scratch space, 임시 유저 데이터 저장공간)은 분리돼 있어 동일 이미지 다른 컨테이너엔 영향이 없음**
 
 -   이미지로 실행한 Todo 앱 컨테이너에 기존 Todo 데이터가 유지안되는 이유
--   위 예를 들기 위해 우분투 컨테이너 두개를 실행, 1-10000 사이 난수를 생성해서 /data.txt 로 저장
+-   파일시스템이 나뉜 예를 들기 위해 우분투 컨테이너 두개를 실행, 1-10000 사이 난수를 생성해서 /data.txt 로 저장
 
 ```bash
 docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
@@ -224,6 +260,9 @@ docker exec <container-id> cat /data.txt
 docker run -it ubuntu ls /
 ```
 
+<br/>
+<br/>
+
 **Container Volumes**
 
 ![volumes](https://docs.docker.com/storage/images/types-of-mounts-volume.png)
@@ -238,6 +277,9 @@ docker run -it ubuntu ls /
         -   도커가 호스트 디스크 내 물리적 위치를 유지(데이터가 저장될 위치를 신경안써도 됨)
     -   **bind mounts**
         -   컨테이너끼리 공유할 호스트의 정확한 마운트 위치를 설정
+
+<br/>
+<br/>
 
 **named volume 생성, 사용하기**
 
@@ -265,6 +307,11 @@ docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
 docker volume inspect <named 볼륨명>
 ```
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Part6: Use bind mounts
 
 **bind mounts로 호스트의 정확한 마운트포인트를 설정할 수 있음**
@@ -280,6 +327,9 @@ docker volume inspect <named 볼륨명>
 | Mount 예(using -v)             | my-volume:/usr/local/data | /path/to/data:/usr/local/data |
 | 컨테이너 내용으로 새 볼륨 추가 | Yes                       | No                            |
 | 볼륨 드라이버 지원 여부        | Yes                       | No                            |
+
+<br/>
+<br/>
 
 **dev-mode 컨테이너 시작하기**
 
@@ -310,6 +360,11 @@ docker logs -f <container-id>
 
 4\. host의 src 내용을 변경하고 [localhost:3000](http://localhost:3000) 페이지를 새로고침을 하면 바로 변경된 내용이 반영됨
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Part7: Multi-container apps
 
 Todo앱에 MySQL을 추가할 때 같은 컨테이너를 사용해야 하나?
@@ -320,6 +375,9 @@ Todo앱에 MySQL을 추가할 때 같은 컨테이너를 사용해야 하나?
 
 두 개의 컨테이너가 동일 네트워크에서 통신
 
+<br/>
+<br/>
+
 **컨테이너 네트워킹**
 
 -   컨테이너들은 개별로 분리돼 있기 때문에 통신 설정(네트워킹)을 해야 함
@@ -327,6 +385,9 @@ Todo앱에 MySQL을 추가할 때 같은 컨테이너를 사용해야 하나?
 -   컨테이너에 네트워크를 설정하는 두 가지 방법
     1. 시작할 때 네트워크 설정
     2. 기존 컨테이너에 네트워크 설정
+
+<br/>
+<br/>
 
 **MySQL 실행**
 
@@ -357,6 +418,9 @@ docker exec -it <mysql-container-id> mysql -u root -p
 
 ![docker04](https://github.com/younggeun0/younggeun0.github.io/blob/master/_posts/img/docker/04.png?raw=true)
 
+<br/>
+<br/>
+
 **MySQL 연결**
 
 -   각 컨테이너는 다른 IP address를 가짐, 이를 확인하기 위해 nicolaka/netshoot 컨테이너를 사용할 것(네트워크 이슈 troubleshooting, debugging 용 컨테이너)
@@ -379,6 +443,9 @@ dig mysql
     -   `mysql` 은 valid한 호스트명이 아님
         -   도커는 network alias를 갖는 컨테이너의 IP 주소를 알 수 있기 때문에 MySQL 컨테이너 생성할 때 `--network-alias` 를 설정한 것
     -   == network alias로 설정한 `mysql` 란 호스트명으로 앱간 통신이 가능하다는 의미
+
+<br/>
+<br/>
 
 **Todo 앱과 MySQL 실행**
 
@@ -412,11 +479,19 @@ docker exec -it <mysql-container-id> mysql -p todos
 
 ![docker06](https://github.com/younggeun0/younggeun0.github.io/blob/master/_posts/img/docker/06.png?raw=true)
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Part8: Use Docker Compose
 
 Docker Compose는 멀티 컨테이너 앱의 정의와 공유를 돕기위해 개발된 툴로 단일 YAML 파일로 서비스들을 정의할 수 있고 단일 커맨드로 모든 작업을 한번에 실행하거나 종료할 수 있음
 
 -   컴포즈의 장점은 앱의 스택을 단일 파일로 정의 가능
+
+<br/>
+<br/>
 
 **Docker Compose 설치**
 
@@ -427,9 +502,13 @@ Docker Compose는 멀티 컨테이너 앱의 정의와 공유를 돕기위해 �
 docker-compose version
 ```
 
+<br/>
+<br/>
+
 **Compose 파일 생성**
 
 1\. app 프로젝트의 루트 경로에 `docker-compose.yml` 파일 추가
+
 2\. 스키마 버전을 정의하며 시작(가장 최신 버전을 사용하는게 좋음)
 
 ```bash
@@ -443,6 +522,9 @@ version: "3.7"
 
 services:
 ```
+
+<br/>
+<br/>
 
 **app 서비스 정의**
 
@@ -482,7 +564,7 @@ services:
 		command: sh -c "yarn install && yarn run dev"
 ```
 
-3\. 포트 맵핑은 서비스의 `port` 로 정의 - 여기선 단축 문법(Short Syntax, `HOST:CONTAINER`)를 썼지만 긴 문법(Long Syntax)도 사용 가능 - [https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1)
+3\. 포트 맵핑은 서비스의 `port` 로 정의 - 여기선 단축 문법(Short Syntax, `HOST:CONTAINER`)를 썼지만 긴 문법(Long Syntax)도 사용 가능 ([Docker Document - Compose File Short Syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1))
 
 ```yaml
 version: "3.7"
@@ -495,7 +577,7 @@ services:
 			- 3000:3000
 ```
 
-4\. 작업 폴더(`working_dir`)와 볼륨 맵핑(`volumes`) 정의 - 볼륨도 단축 문법(`[SOURCE:]TARGET[:MODE]`), 긴 문법이 있음(여기선 단축문법 사용) - `SOURCE`는 호스트 경로 또는 볼륨명 - `TARGET` 은 볼륨이 마운트 될 컨테이너 경로 - 기본 모드들은 read-only의 `ro` 와 read-write `rw` (default) - [https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3)
+4\. 작업 폴더(`working_dir`)와 볼륨 맵핑(`volumes`) 정의 - 볼륨도 단축 문법(`[SOURCE:]TARGET[:MODE]`), 긴 문법이 있음(여기선 단축문법 사용) - `SOURCE`는 호스트 경로 또는 볼륨명 - `TARGET` 은 볼륨이 마운트 될 컨테이너 경로 - 기본 모드들은 read-only의 `ro` 와 read-write `rw` (default)
 
 ```yaml
 version: "3.7"
@@ -532,6 +614,9 @@ version: "3.7"
        MYSQL_DB: todos
 ```
 
+<br/>
+<br/>
+
 **MySQL 서비스 정의**
 
 ```bash
@@ -556,7 +641,7 @@ version: "3.7"
      image: mysql:5.7
 ```
 
-2\. 다음으로 볼륨 맵핑, `docker run` 커맨드로 named volume 사용 시 생성되지 않은 볼륨은 자동생성 됐지만 컴포즈로 실행할 땐 생략할 수 없고 볼륨을 top-level `volumes` 에 정의해줘야 함 - 볼륨을 정의하고 마운트포인트를 설정할 수 있지만 볼륨명만 쓰면 기본 옵션이 적용됨 - 기타 볼륨 옵션 - [https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference](https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference)
+2\. 다음으로 볼륨 맵핑, `docker run` 커맨드로 named volume 사용 시 생성되지 않은 볼륨은 자동생성 됐지만 컴포즈로 실행할 땐 생략할 수 없고 볼륨을 top-level `volumes` 에 정의해줘야 함 - 볼륨을 정의하고 마운트포인트를 설정할 수 있지만 볼륨명만 쓰면 기본 옵션이 적용됨 ([기타 볼륨 옵션](https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference))
 
 ```yaml
 version: "3.7"
@@ -625,6 +710,9 @@ volumes:
     todo-mysql-data:
 ```
 
+<br/>
+<br/>
+
 **앱 스택 실행**
 
 `docker-compose.yml` 을 앱 root 경로에 두고 아래 커맨드 실행
@@ -653,10 +741,16 @@ docker-compose logs -f
 docker-compose logs -f app
 ```
 
+<br/>
+<br/>
+
 **앱을 실행할 때 DB 실행 대기**
 
 -   도커는 어떤 컨테이너가 시작되기 전에 다른 컨테이너가 완전히 로드돼 실행될 때까지 기다리는 built-in 기능은 지원하지 않음
     -   예제는 노드 https://github.com/dwmkerr/wait-port dependency를 사용해 DB가 로드될때까지 대기하도록 돼 있음
+
+<br/>
+<br/>
 
 **Docker Dashboard에서 앱 스택 보기**
 
@@ -666,6 +760,9 @@ docker-compose logs -f app
 ![docker09](https://github.com/younggeun0/younggeun0.github.io/blob/master/_posts/img/docker/09.png?raw=true)
 
 Docker Dashboard에 표시된 app stack
+
+<br/>
+<br/>
 
 **Docker compose 종료하기**
 
