@@ -45,7 +45,7 @@ docker run -d -p 80:80 docker/getting-started
 
 ## Part 2: Sample Application
 
-1. app clone - [https://github.com/docker/getting-started/tree/master/app](https://github.com/docker/getting-started/tree/master/app)
+1\. app clone - [https://github.com/docker/getting-started/tree/master/app](https://github.com/docker/getting-started/tree/master/app)
 
 2-1. 앱의 컨테이너 이미지 빌드
 
@@ -76,7 +76,7 @@ docker build -t getting-started .
         -   컨테이너를 실행할 때 이미지를 지칭하기 위함
     -   마지막 `.` 은 현재 디렉토리에서 `Dockerfile` 을 찾으라는 의미
 
-3. 앱 컨테이너 시작
+3\. 앱 컨테이너 시작
 
 ```docker
 docker run -dp 3000:3000 getting-started
@@ -91,14 +91,15 @@ docker run -dp 3000:3000 getting-started
 
 위 앱에서 경고 메시지를 바꿔 적용시키고자 하는 경우…
 
-1. 소스 코드 수정
-2. 빌드 커맨드 재실행
+1.소스 코드 수정
+
+2.빌드 커맨드 재실행
 
 ```bash
 docker build -t getting-started .
 ```
 
-3. 새로운 이미지로 컨테이너 실행
+3.새로운 이미지로 컨테이너 실행
 
 ```bash
 docker run -dp 3000:3000 getting-started
@@ -120,19 +121,19 @@ docker: Error response from daemon: driver failed programming external connectiv
 
 **CLI를 이용한 컨테이너 제거**
 
-1. `docker ps` 커맨드로 사용중인 컨테이너의 아이디를 조회
+1\. `docker ps` 커맨드로 사용중인 컨테이너의 아이디를 조회
 
 ```bash
 docker ps
 ```
 
-2. `docker stop` 커맨드로 컨테이너를 정지시킴
+2\. `docker stop` 커맨드로 컨테이너를 정지시킴
 
 ```bash
 docker stop <the-container-id>
 ```
 
-3. `docker rm` 커맨드로 컨테이너 제거
+3\. `docker rm` 커맨드로 컨테이너 제거
 
 ```bash
 docker rm <the-container-id>
@@ -161,26 +162,25 @@ docker push <docker-hub-id>/getting-started:tagname
 
 **이미지 Push 하기**
 
-1. 현재 이미지 리스트 확인
+1\. 현재 이미지 리스트 확인
 
 ```bash
 docker image ls
 ```
 
-2. DockerHub 로그인
+2\. DockerHub 로그인
 
 ```bash
 docker login -u <docker-hub-id>
 ```
 
-3. `docker tag` 커맨드로 `getting-started` 이미지에 새 이름을 설정
+3\. `docker tag` 커맨드로 `getting-started` 이미지에 새 이름을 설정
 
 ```bash
 docker tag getting-started <docker-hub-id>/getting-started
 ```
 
-4. `docker push` 커맨드로 푸시
-    - Docker Hub에서 값을 카피하는 경우 tagname은 생략가능, 이미지명에 tag를 추가하지 않은 경우 자동으로 `latest`란 태그가 붙음
+4\. `docker push` 커맨드로 푸시 - Docker Hub에서 값을 카피하는 경우 tagname은 생략가능, 이미지명에 tag를 추가하지 않은 경우 자동으로 `latest`란 태그가 붙음
 
 ```bash
 docker push <docker-hub-id>/getting-started
@@ -188,14 +188,14 @@ docker push <docker-hub-id>/getting-started
 
 ### 새 인스턴스로 이미지 실행
 
-1. [https://labs.play-with-docker.com/](https://labs.play-with-docker.com/) 페이지에서 Docker 로그인, `ADD NEW INSTANCE` 클릭
-2. Docker Hub에 올렸던 getting-started 이미지 실행
+1\. [https://labs.play-with-docker.com/](https://labs.play-with-docker.com/) 페이지에서 Docker 로그인, `ADD NEW INSTANCE` 클릭
+2\. Docker Hub에 올렸던 getting-started 이미지 실행
 
 ```bash
 docker run -dp 3000:3000 <docker-hub-id>/getting-started
 ```
 
-3. 3000버튼 선택, 이미지 실행 페이지가 표시되는걸 확인
+3\. 3000버튼 선택, 이미지 실행 페이지가 표시되는걸 확인
 
 **이렇게 이미지를 만들고 Registry에 푸시해서 production 환경이 최신 이미지를 사용하는게 일반적인 CI Pipeline**
 
@@ -216,7 +216,7 @@ docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/
 docker exec <container-id> cat /data.txt
 ```
 
-![docker03](docker03.png)
+![docker03](https://github.com/younggeun0/younggeun0.github.io/blob/master/_posts/img/docker/03.png?raw=true)
 
 -   그리고 다른 ubuntu 컨테이너를 실행해서 파일시스템이 /data.txt가 있는지 확인해보면 없음
 
@@ -241,22 +241,23 @@ docker run -it ubuntu ls /
 
 **named volume 생성, 사용하기**
 
-1. `docker volume create` 커맨드 실행
+1\. `docker volume create` 커맨드 실행
 
 ```bash
 docker volume create todo-db
 ```
 
-1. 기존 Todo 앱 컨테이너 제거
-2. `-v` 플래그로 마운트할 볼륨 지정, Todo 앱 컨테이너 실행
-    - named volume을 `/etc/todos` 에 마운트하고 해당 경로에 생성되는 파일의 변화는 캡쳐됨
+2\. 기존 Todo 앱 컨테이너 제거
+
+3\. `-v` 플래그로 마운트할 볼륨 지정, Todo 앱 컨테이너 실행 - named volume을 `/etc/todos` 에 마운트하고 해당 경로에 생성되는 파일의 변화는 캡쳐됨
 
 ```bash
 docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
 ```
 
-1. 컨테이너 실행 후 Todo 추가, 다시 컨테이너 제거
-2. 새 컨테이너 실행해도 Todo 내용이 유지되는 것을 확인
+4\. 컨테이너 실행 후 Todo 추가, 다시 컨테이너 제거
+
+5\. 새 컨테이너 실행해도 Todo 내용이 유지되는 것을 확인
 
 **volume 정보 확인**
 
@@ -282,9 +283,11 @@ docker volume inspect <named 볼륨명>
 
 **dev-mode 컨테이너 시작하기**
 
-1. bind mounts를 사용해 소스코드를 컨테이너에 마운트
-2. dependencies 설치(dev dependendies 포함)
-3. 파일 변화를 바로 반영하기 위해 노드몬 실행
+1\. bind mounts를 사용해 소스코드를 컨테이너에 마운트
+
+2\. dependencies 설치(dev dependendies 포함)
+
+3\. 파일 변화를 바로 반영하기 위해 노드몬 실행
 
 ```bash
 docker run -dp 3000:3000 \
@@ -305,7 +308,7 @@ docker run -dp 3000:3000 \
 docker logs -f <container-id>
 ```
 
-4. host의 src 내용을 변경하고 [localhost:3000](http://localhost:3000) 페이지를 새로고침을 하면 바로 변경된 내용이 반영됨
+4\. host의 src 내용을 변경하고 [localhost:3000](http://localhost:3000) 페이지를 새로고침을 하면 바로 변경된 내용이 반영됨
 
 ## Part7: Multi-container apps
 
@@ -327,16 +330,13 @@ Todo앱에 MySQL을 추가할 때 같은 컨테이너를 사용해야 하나?
 
 **MySQL 실행**
 
-1. 네트워크 생성
+1\. 네트워크 생성
 
 ```bash
 docker network create todo-app
 ```
 
-2. 네트워크를 설정하고 MySQL 컨테이너 실행
-    - `-e` - 환경변수 설정
-    - `-v todo-mysql-data:/var/lib/mysql` - `todo-mysql-data` 란 볼륨을 사용, MySQL 데이터가 저장될 위치를 `/var/lib/mysql` 로 마운팅
-        - `docker volume create` 를 수행하지 않더라도 named volume을 사용하면 자동으로 도커가 생성해줌
+2\. 네트워크를 설정하고 MySQL 컨테이너 실행 - `-e` - 환경변수 설정 - `-v todo-mysql-data:/var/lib/mysql` - `todo-mysql-data` 란 볼륨을 사용, MySQL 데이터가 저장될 위치를 `/var/lib/mysql` 로 마운팅 - `docker volume create` 를 수행하지 않더라도 named volume을 사용하면 자동으로 도커가 생성해줌
 
 ```bash
 docker run -d \
@@ -347,7 +347,7 @@ docker run -d \
      mysql:5.7
 ```
 
-3. 데이터베이스가 실행중인지 확인하기 위해 접속
+3\. 데이터베이스가 실행중인지 확인하기 위해 접속
 
 ```bash
 docker exec -it <mysql-container-id> mysql -u root -p
@@ -361,13 +361,13 @@ docker exec -it <mysql-container-id> mysql -u root -p
 
 -   각 컨테이너는 다른 IP address를 가짐, 이를 확인하기 위해 nicolaka/netshoot 컨테이너를 사용할 것(네트워크 이슈 troubleshooting, debugging 용 컨테이너)
 
-1. [nicolaka/netshoot](https://github.com/nicolaka/netshoot) 이미지를 이용한 새 컨테이너를 같은 네트워크에 실행
+1\. [nicolaka/netshoot](https://github.com/nicolaka/netshoot) 이미지를 이용한 새 컨테이너를 같은 네트워크에 실행
 
 ```bash
 docker run -it --network todo-app nicolaka/netshoot
 ```
 
-1. `dig` 커맨드를 사용해서 `mysql` 을 호스트명으로 갖는 IP 주소를 찾음
+2\. `dig` 커맨드를 사용해서 `mysql` 을 호스트명으로 갖는 IP 주소를 찾음
 
 ```bash
 dig mysql
@@ -390,7 +390,7 @@ dig mysql
     -   [연결을 위한 환경변수 설정은 개발할 땐 괜찮지만 production 앱을 실행할 땐 권장되지 않음](https://diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
         -   일반적으로 컨테이너가 실행하며 사용될 private한 정보들은 파일로 관리됨(파일로부터 데이터를 읽어 환경 변수가 설정되는 방식)
 
-1. 환경변수를 설정하고 Todo 앱 컨테이너 실행, Todo 앱에 항목 추가 실행
+1\. 환경변수를 설정하고 Todo 앱 컨테이너 실행, Todo 앱에 항목 추가 실행
 
 ```bash
 docker run -dp 3000:3000 \
@@ -404,7 +404,7 @@ docker run -dp 3000:3000 \
    sh -c "yarn install && yarn run dev"
 ```
 
-2. Todo앱에 추가한 데이터가 MySQL에 들어갔는지 확인
+2\. Todo앱에 추가한 데이터가 MySQL에 들어갔는지 확인
 
 ```bash
 docker exec -it <mysql-container-id> mysql -p todos
@@ -429,14 +429,14 @@ docker-compose version
 
 **Compose 파일 생성**
 
-1. app 프로젝트의 루트 경로에 `docker-compose.yml` 파일 추가
-2. 스키마 버전을 정의하며 시작(가장 최신 버전을 사용하는게 좋음)
+1\. app 프로젝트의 루트 경로에 `docker-compose.yml` 파일 추가
+2\. 스키마 버전을 정의하며 시작(가장 최신 버전을 사용하는게 좋음)
 
 ```bash
 verison: "3.7"
 ```
 
-1. 앱의 부분으로 실행될 서비스나 컨테이너들을 정의
+3\. 앱의 부분으로 실행될 서비스나 컨테이너들을 정의
 
 ```bash
 version: "3.7"
@@ -461,8 +461,7 @@ docker run -dp 3000:3000 \
   sh -c "yarn install && yarn run dev"
 ```
 
-1. 우선 서비스 항목과 컨테이너 이미지를 정의
-    - 서비스명은 설정 가능, 서비스명은 자동적으로 network alias가 됨
+1\. 우선 서비스 항목과 컨테이너 이미지를 정의 - 서비스명은 설정 가능, 서비스명은 자동적으로 network alias가 됨
 
 ```yaml
 version: "3.7"
@@ -472,7 +471,7 @@ services:
 		image: node:12-alpine
 ```
 
-1. 순서는 상관없지만 보통 `image` 정의 뒤에 `command` 를 정의
+2\. 순서는 상관없지만 보통 `image` 정의 뒤에 `command` 를 정의
 
 ```yaml
 version: "3.7"
@@ -483,9 +482,7 @@ services:
 		command: sh -c "yarn install && yarn run dev"
 ```
 
-1. 포트 맵핑은 서비스의 `port` 로 정의
-    - 여기선 단축 문법(Short Syntax, `HOST:CONTAINER`)를 썼지만 긴 문법(Long Syntax)도 사용 가능
-        - [https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1)
+3\. 포트 맵핑은 서비스의 `port` 로 정의 - 여기선 단축 문법(Short Syntax, `HOST:CONTAINER`)를 썼지만 긴 문법(Long Syntax)도 사용 가능 - [https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1)
 
 ```yaml
 version: "3.7"
@@ -498,12 +495,7 @@ services:
 			- 3000:3000
 ```
 
-1. 작업 폴더(`working_dir`)와 볼륨 맵핑(`volumes`) 정의
-    - 볼륨도 단축 문법(`[SOURCE:]TARGET[:MODE]`), 긴 문법이 있음(여기선 단축문법 사용)
-        - `SOURCE`는 호스트 경로 또는 볼륨명
-        - `TARGET` 은 볼륨이 마운트 될 컨테이너 경로
-        - 기본 모드들은 read-only의 `ro` 와 read-write `rw` (default)
-        - [https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3)
+4\. 작업 폴더(`working_dir`)와 볼륨 맵핑(`volumes`) 정의 - 볼륨도 단축 문법(`[SOURCE:]TARGET[:MODE]`), 긴 문법이 있음(여기선 단축문법 사용) - `SOURCE`는 호스트 경로 또는 볼륨명 - `TARGET` 은 볼륨이 마운트 될 컨테이너 경로 - 기본 모드들은 read-only의 `ro` 와 read-write `rw` (default) - [https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3)
 
 ```yaml
 version: "3.7"
@@ -519,7 +511,7 @@ services:
 			- ./:/app
 ```
 
-1. 마지막으로 환경변수를 `environment` 에 정의
+5\. 마지막으로 환경변수를 `environment` 에 정의
 
 ```yaml
 version: "3.7"
@@ -552,7 +544,7 @@ docker run -d \
   mysql:5.7
 ```
 
-1. 새로운 서비스와 이름 정의, 정의한 서비스명 `mysql` 은 자동으로 network alias가 됨, 그 뒤 사용할 이미지 정의
+1\. 새로운 서비스와 이름 정의, 정의한 서비스명 `mysql` 은 자동으로 network alias가 됨, 그 뒤 사용할 이미지 정의
 
 ```yaml
 version: "3.7"
@@ -564,9 +556,7 @@ version: "3.7"
      image: mysql:5.7
 ```
 
-1. 다음으로 볼륨 맵핑, `docker run` 커맨드로 named volume 사용 시 생성되지 않은 볼륨은 자동생성 됐지만 컴포즈로 실행할 땐 생략할 수 없고 볼륨을 top-level `volumes` 에 정의해줘야 함
-    - 볼륨을 정의하고 마운트포인트를 설정할 수 있지만 볼륨명만 쓰면 기본 옵션이 적용됨
-        - 기타 볼륨 옵션 - [https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference](https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference)
+2\. 다음으로 볼륨 맵핑, `docker run` 커맨드로 named volume 사용 시 생성되지 않은 볼륨은 자동생성 됐지만 컴포즈로 실행할 땐 생략할 수 없고 볼륨을 top-level `volumes` 에 정의해줘야 함 - 볼륨을 정의하고 마운트포인트를 설정할 수 있지만 볼륨명만 쓰면 기본 옵션이 적용됨 - 기타 볼륨 옵션 - [https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference](https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference)
 
 ```yaml
 version: "3.7"
@@ -583,7 +573,7 @@ version: "3.7"
    todo-mysql-data:
 ```
 
-1. 환경변수 추가
+3\. 환경변수 추가
 
 ```yaml
 version: "3.7"
